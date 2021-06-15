@@ -195,7 +195,7 @@ export class SocketContext {
 
   public static createSendMsgContext(cmd: string, mod?: MsgMod, obj?: Object): SocketContext {
     // let mod: MsgMod = MsgMod.File;
-    mod = mod || SocketContext.requireFn ? MsgMod.File : MsgMod.Mem;
+    mod = mod || SocketContext.requireFn ? MsgMod.Mem : MsgMod.File;
     let data: string;
     const msgId = `${v4()}${new Date().getTime()}`;
     const context = new SocketContext(cmd, msgId, mod, 0, "");

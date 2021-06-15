@@ -29,13 +29,13 @@ describe("测试websocket", () => {
 
     WebsocketClient.registryWebsocketHook("open", async () => {
       console.log('open success');
-      // const context = SocketContext.createSendMsgContext("hello",MsgMod.Mem,[
-      //   {id:1,name:"test1",org:{name:"test1",code:"4566"}},
-      //   {id:2,name:"test2",org:{name:"test2",code:"4567"}}
-      // ])
-      const context =SocketContext.createSendMsgContext("hello",MsgMod.Mem,{
-        acd:"123",cs:"4454"
-      })
+      const context = SocketContext.createSendMsgContext("hello",MsgMod.Mem,[
+         {id:1,name:"test1",org:{name:"test1",code:"4566"}},
+         {id:2,name:"test2",org:{name:"test2",code:"4567"}}
+       ])
+      //const context =SocketContext.createSendMsgContext("hello",MsgMod.Mem,{
+        //acd:"123",cs:"4454"
+      //})
       // console.log(context);
       try {
         const resultContext = await WebsocketClient.getConn().sendMsg(context);
